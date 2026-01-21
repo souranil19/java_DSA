@@ -73,10 +73,10 @@ public class LinkedList {
         Node newNode = new Node(data);
         size++;
 
-        int i = 0;
+        int i = 1;
         Node temp = head;
         // finding the index
-        while (i < index - 1) {
+        while (i < index) {
 
             temp = temp.next;
             i = i + 1;
@@ -145,7 +145,7 @@ public class LinkedList {
 
         Node temp = head;
         while (temp != null) {
-            System.out.print(temp.data + " ");
+            System.out.print(temp.data + "->");
             temp = temp.next;
         }
         System.out.println();
@@ -173,10 +173,13 @@ public class LinkedList {
 
         LinkedList ll = new LinkedList();
 
-        ll.addFirst(10);
-        ll.addFirst(20);
+        ll.addLast(10);
+        ll.addLast(20);
+        ll.addLast(30);
+        ll.addLast(40);
         ll.print();
-
+        ll.addMiddle(3, 5);
+        ll.print();
         
     }
 
