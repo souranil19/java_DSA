@@ -1,5 +1,18 @@
 package linked_list;
 
+class Node {
+    // data stored in the node
+    int data;
+    // for storing reference
+    Node next;
+
+    // constructor
+    public Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
 public class LinkedList {
 
     // creating HEAD and TAIL of the list
@@ -7,19 +20,6 @@ public class LinkedList {
     public static Node tail;
 
     public static int size;
-
-    public static class Node {
-        // data stored in the node
-        int data;
-        // for storing reffrence
-        Node next;
-
-        // constructor
-        public Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
 
     // making a function that adds a node in front of head
 
@@ -57,14 +57,11 @@ public class LinkedList {
 
     }
 
-    // function for adding a node in middle
+    
     public void addMiddle(int index, int data) {
 
-        /*
-         * if our index is 0 means we are adding
-         * element in first position in this case we
-         * need to change out head so we will call add first function
-         */
+     
+     
 
         if (index == 0) {
             addFirst(data);
@@ -184,3 +181,4 @@ public class LinkedList {
     }
 
 }
+
