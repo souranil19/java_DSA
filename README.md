@@ -1,56 +1,70 @@
-# LinkedList Implementation
+# Java DSA Practice
 
-A Java implementation of a singly linked list with basic operations like insert and display.
+Data-structure and algorithm practice in Java, organized by topic folders.
 
 ## Project Structure
 
 ```
-DSA_JAVA_PRACTICE/
-└── linked_list/
-    └── LinkedList.java
+/
+├─ linked_list/
+│  ├─ linked_list.java
+│  └─ DoublyLL.java
+├─ searching_algorithm/
+│  └─ search.java
+└─ sorting_algo/
+   ├─ all_short_test.java
+   ├─ bubble_sort.java
+   └─ selection_short.java
 ```
 
-## How to Run
+## Features
 
-### Step 1: Navigate to the Project Directory
-Open PowerShell and navigate to the root directory:
+- Singly linked list (menu-driven add/remove/print)
+- Doubly linked list (menu-driven add/remove/print)
+- Searching algorithms (linear + recursive binary search)
+- Sorting algorithms (bubble, selection, plus a test runner)
+
+## How to Run (PowerShell)
+
+### Step 1: Go to the repo root
 ```powershell
-cd E:\DSA_JAVA_PRACTICE
+cd "<repo-root>"
 ```
 
-### Step 2: Compile the Java File
-Compile the LinkedList.java file with the `-d .` flag to organize it into the package structure:
+If your folder name has spaces, keep the quotes.
+
+### Step 2: Compile and run what you need
+
+#### Searching
 ```powershell
-javac -d . linked_list/LinkedList.java
+javac -d . searching_algorithm/search.java
+java searching_algorithm.search
 ```
 
-This creates a `linked_list/LinkedList.class` file that matches the package declaration.
-
-### Step 3: Run the Program
-Execute the program using the full package name:
+#### Sorting test runner
 ```powershell
-java -cp . linked_list.LinkedList
+javac -d . sorting_algo/all_short_test.java
+java sorting_algo.all_short_test
 ```
 
-### Expected Output
+#### Singly linked list (menu-driven)
+```powershell
+javac -d . linked_list/linked_list.java
+java linked_list.linked_list
 ```
-10 -> 20 -> 30 -> null
+
+#### Doubly linked list (menu-driven)
+```powershell
+javac -d . linked_list/DoublyLL.java
+java linked_list.DoublyLL
 ```
 
-## Important Notes
+### Optional: Compile everything at once
+```powershell
+javac -d . linked_list/*.java searching_algorithm/*.java sorting_algo/*.java
+```
 
-- **Package Declaration**: The file contains `package linked_list;` which must match the directory structure. Do not remove this declaration.
-- **Working Directory**: Always run the commands from the `E:\DSA_JAVA_PRACTICE` directory (the root folder containing the `linked_list` folder).
-- **Classpath**: The `-cp .` (classpath) tells Java to look for classes in the current directory.
+## Notes
 
-## Code Description
-
-### LinkedList Class
-- **insert(int data)**: Adds a new node with the given data at the end of the list.
-- **display()**: Prints all elements in the linked list in order.
-- **main()**: Entry point that creates a list, inserts three elements (10, 20, 30), and displays them.
-
-### Node Class
-A static inner class representing each node in the linked list:
-- `data`: Stores the integer value
-- `next`: Reference to the next node (null if it's the last node)
+- **Package names match folders**. Keep `package linked_list;`, `package sorting_algo;`, and `package searching_algorithm;` aligned with their directories.
+- **Run from repo root** so the classpath lines up with the package structure.
