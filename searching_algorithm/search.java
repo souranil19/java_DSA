@@ -13,22 +13,20 @@ class linear_search {
 
 
 class binary_search {
-    public static int binarySearch(int[] arr, int target) {
-        int left = 0;
-        int right = arr.length - 1;
-
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-
-            if (arr[mid] == target) {
-                return mid; // Target found at index mid
-            } else if (arr[mid] < target) {
-                left = mid + 1; // Search in the right half
-            } else {
-                right = mid - 1; // Search in the left half
-            }
+    public static int binarySearch(int[] arr, int target, int left, int right) {
+        if (left > right) {
+            return -1; // Target not found
         }
-        return -1; // Target not found
+
+        int mid = left + (right - left) / 2;
+
+        if (arr[mid] == target) {
+            return mid; // Target found at index mid
+        }
+        if (arr[mid] < target) {
+            return binarySearch(arr, target, mid + 1, right); // Search in right half
+        }
+        return binarySearch(arr, target, left, mid - 1); // Search in left half
     }
 }
 
@@ -48,7 +46,7 @@ public class search {
         }
 
         // Binary Search (array must be sorted)
-        int binaryResult = binary_search.binarySearch(arr, target);
+        int binaryResult = binary_search.binarySearch(arr, target, 0, arr.length - 1);
         if (binaryResult != -1) {
             System.out.println("Binary Search: Element found at index " + binaryResult);
         } else {
