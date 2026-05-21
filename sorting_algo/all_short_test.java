@@ -9,6 +9,9 @@ public class all_short_test {
         System.out.println();
         bubble_sort bubble=new bubble_sort();
         bubble.bubble(a);
+        System.out.println();
+        insertion_sort insert=new insertion_sort();
+        insert.insert(a);
     }
     
 }
